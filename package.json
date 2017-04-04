@@ -1,5 +1,5 @@
 {
-  "name": "node-backoff-strategies",
+  "name": "backoff-strategies",
   "version": "1.0.0",
   "description": "Collection of backoff strategies with a common API",
   "main": "index.js",
