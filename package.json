@@ -1,10 +1,10 @@
 {
   "name": "backoff-strategies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Collection of backoff strategies with a common API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "$(npm bin)/mocha"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/richthegeek/node-backoff-strategies#readme",
   "dependencies": {
     "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
   }
 }
