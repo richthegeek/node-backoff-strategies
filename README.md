@@ -29,15 +29,15 @@ console.log(fibonacciBackoff.get(5)); // 80
 const Strategies = require('backoff-strategies');
 
 var expBackoff = new Strategies.Exponential({
-    randomisationFactor: 0,
+    randomisationFactor: 0.5,
     multiplier: 10,
     maxValue: 300
 });
 
 console.log(expBackoff.next()); // 0
-console.log(expBackoff.next()); // 10
-console.log(expBackoff.next()); // 20
-console.log(expBackoff.next()); // 40
+console.log(expBackoff.next()); // 13 - between 10 and 15
+console.log(expBackoff.next()); // 26 - between 20 and 30
+console.log(expBackoff.next()); // 57 - between 40 and 60
 
-console.log(expBackoff.get(5)); // 160
+console.log(expBackoff.get(5)); // 167 - between 160 and 240
 ```
