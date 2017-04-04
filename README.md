@@ -81,9 +81,7 @@ This accepts an additional `factor` option.
 const Strategies = require('backoff-strategies');
 
 var polyBackoff = new Strategies.Polynomial({
-    randomisationFactor: 0.5,
-    multiplier: 10,
-    maxValue: 300
+    factor: 3
 });
 
 console.log(polyBackoff.next()); // 0
