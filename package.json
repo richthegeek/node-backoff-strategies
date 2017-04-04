@@ -1,0 +1,26 @@
+{
+  "name": "node-backoff-strategies",
+  "version": "1.0.0",
+  "description": "Collection of backoff strategies with a common API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/richthegeek/node-backoff-strategies.git"
+  },
+  "keywords": [
+    "backoff",
+    "exponential"
+  ],
+  "author": "Richard Lyon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richthegeek/node-backoff-strategies/issues"
+  },
+  "homepage": "https://github.com/richthegeek/node-backoff-strategies#readme",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
