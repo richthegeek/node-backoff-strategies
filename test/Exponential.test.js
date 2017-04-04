@@ -1,14 +1,14 @@
-const assert = require('assert');
-const qs = require('querystring')
-const Exponential = require('../index').Exponential;
+var assert = require('assert');
+var qs = require('querystring')
+var Exponential = require('../index').Exponential;
 
-describe('Exponential Strategy', () => {
+describe('Exponential Strategy', function () {
 
-  var test = (options, i, expected, message) => {
+  function test (options, i, expected, message) {
     options.i = i;
 
-    it('should return ' + expected + ' for ' + qs.stringify(options, ','), () => {
-      let strat = new Exponential(options);
+    it('should return ' + expected + ' for ' + qs.stringify(options, ','), function () {
+      var strat = new Exponential(options);
       assert.equal(strat.get(i), expected, message);
     });
   }

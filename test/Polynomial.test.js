@@ -1,14 +1,14 @@
-const assert = require('assert');
-const qs = require('querystring')
-const Polynomial = require('../index').Polynomial;
+var assert = require('assert');
+var qs = require('querystring')
+var Polynomial = require('../index').Polynomial;
 
-describe('Polynomial Strategy', () => {
+describe('Polynomial Strategy', function () {
 
-  var test = (options, i, expected, message) => {
+  function test (options, i, expected, message) {
     options.i = i;
 
-    it('should return ' + expected + ' for ' + qs.stringify(options, ','), () => {
-      let strat = new Polynomial(options);
+    it('should return ' + expected + ' for ' + qs.stringify(options, ','), function () {
+      var strat = new Polynomial(options);
       assert.equal(strat.get(i), expected, message);
     });
   }

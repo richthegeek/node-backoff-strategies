@@ -1,6 +1,6 @@
 {
   "name": "backoff-strategies",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Collection of backoff strategies with a common API",
   "main": "index.js",
   "scripts": {

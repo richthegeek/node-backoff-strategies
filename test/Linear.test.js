@@ -1,14 +1,14 @@
-const assert = require('assert');
-const qs = require('querystring')
-const Linear = require('../index').Linear;
+var assert = require('assert');
+var qs = require('querystring')
+var Linear = require('../index').Linear;
 
-describe('Linear Strategy', () => {
+describe('Linear Strategy', function () {
 
-  var test = (options, i, expected, message) => {
+  function test (options, i, expected, message) {
     options.i = i;
 
-    it('should return ' + expected + ' for ' + qs.stringify(options, ','), () => {
-      let strat = new Linear(options);
+    it('should return ' + expected + ' for ' + qs.stringify(options, ','), function () {
+      var strat = new Linear(options);
       assert.equal(strat.get(i), expected, message);
     });
   }

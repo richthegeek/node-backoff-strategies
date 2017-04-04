@@ -1,14 +1,14 @@
-const assert = require('assert');
-const qs = require('querystring')
-const Fibonacci = require('../index').Fibonacci;
+var assert = require('assert');
+var qs = require('querystring')
+var Fibonacci = require('../index').Fibonacci;
 
-describe('Fibonacci Strategy', () => {
+describe('Fibonacci Strategy', function () {
 
-  var test = (options, i, expected, message) => {
+  function test (options, i, expected, message) {
     options.i = i;
 
-    it('should return ' + expected + ' for ' + qs.stringify(options, ','), () => {
-      let strat = new Fibonacci(options);
+    it('should return ' + expected + ' for ' + qs.stringify(options, ','), function () {
+      var strat = new Fibonacci(options);
       assert.equal(strat.get(i), expected, message);
     });
   }
@@ -21,12 +21,12 @@ describe('Fibonacci Strategy', () => {
   test({multiplier: 10}, 4, 50);
   test({multiplier: 10}, 5, 80);
 
-  it('should utilise the cache', () => {
-    let strat = new Fibonacci();
-    let _orig = strat.getSubvalue.bind(strat);
+  it('should utilise the cache', function () {
+    var strat = new Fibonacci();
+    var _orig = strat.getSubvalue.bind(strat);
     
     strat.cache[4] = 99;
-    let count = 0;
+    var count = 0;
     strat.getSubvalue = function (i) {
       count++;
       return _orig(i)
