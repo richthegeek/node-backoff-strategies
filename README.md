@@ -37,6 +37,22 @@ console.log(linearBackoff.next()); // 2
 console.log(linearBackoff.get(6)); // 6
 ```
 
+### Defined Strategy
+A predefined strategy for granular control
+```javascript
+const Strategies = require('backoff-strategies');
+
+var definedBackoff = new Strategies.Defined({values: [1, 5, 6, 3]});
+
+console.log(definedBackoff.next()); // 1
+console.log(definedBackoff.next()); // 5
+console.log(definedBackoff.next()); // 6
+console.log(definedBackoff.next()); // 3
+console.log(definedBackoff.next()); // 3
+
+console.log(definedBackoff.get(6)); // 3
+```
+
 ### Fibonnaci Strategy
 A strategy increasing according to a Fabonacci sequence (1,1,2,3,5,8,13)
 ```javascript
